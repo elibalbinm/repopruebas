@@ -29,12 +29,12 @@ const crearUsuario = async(req, res = response) => {
             });
         }
 
-        if (rol && rol != 'ROL_ALUMNO' && rol != 'ROL_PROFESOR' && rol != 'ROL_ADMIN') {
-            return res.status(400).json({
-                ok: false,
-                msg: 'Rol incorrecto'
-            });
-        }
+        // if (rol && rol != 'ROL_ALUMNO' && rol != 'ROL_PROFESOR' && rol != 'ROL_ADMIN') {
+        //     return res.status(400).json({
+        //         ok: false,
+        //         msg: 'Rol incorrecto'
+        //     });
+        // }
 
         const salt = bcrypt.genSaltSync();
         const cpassword = bcrypt.hashSync(password, salt);
