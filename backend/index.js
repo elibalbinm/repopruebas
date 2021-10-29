@@ -1,8 +1,5 @@
-/*
-Importación de módulos
-*/
+// Importación de módulos
 const express = require('express');
-// Importamos cors
 const cors = require('cors');
 // Agregamos Dotenv
 // Busca el archivo .env en la raiz de nuestro proyecto y carga las variables
@@ -16,11 +13,15 @@ const app = express();
 dbConnection();
 
 app.use(cors());
+//Construye la request como si fuese un JSON
+app.use(express.json());
+app.use('/api/usuarios', require('./routes/usuarios'));
 // Abrir la aplicacíon en el puerto 3000
 app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en el puerto ' + process.env.PORT);
 });
 
+/*
 app.get('/', (req, res) => {
     res.json({
         ok: true,
@@ -28,7 +29,6 @@ app.get('/', (req, res) => {
     });
 });
 
-/*
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto ' + 3000);
 });*/
