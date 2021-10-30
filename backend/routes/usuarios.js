@@ -29,7 +29,7 @@ router.put('/:id', [
     check('nombre', 'El argumento nombre es obligatorio').not().isEmpty(),
     check('apellidos', 'El argumento apellidos es obligatorio').not().isEmpty(),
     check('email', 'El argumento email es obligatorio').not().isEmpty(),
-    check('password', 'El argumento password es obligatorio').not().isEmpty(),
+    // check('password', 'El argumento password es obligatorio').not().isEmpty(),
     check('id', 'El identificador no es válido').isMongoId(),
     validarRol,
     validarCampos
